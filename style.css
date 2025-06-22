@@ -28,10 +28,20 @@ body{
     border-radius: 20px;
     color: #A6ECE0;
     background-color: #544B3D;
+    font-size: 50px;
 }
 #playagain{
    padding: 1rem;
    background-color: #4C8577;
    border-radius: 20px;
    color: white;
+}
+#winner{
+    font-size: 80px;
+    text-align: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:yellow;
 }

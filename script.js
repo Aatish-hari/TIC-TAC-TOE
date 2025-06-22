@@ -1,5 +1,6 @@
 let boxs = document.querySelectorAll(".box");
 let playagainbtn = document.querySelector("#playagain");
+let winnertext = document.querySelector("#winner")
 let turnofx= true;
 
 const winningPatterns = [
@@ -12,12 +13,31 @@ const winningPatterns = [
   [0, 4, 8], // diagonals
   [2, 4, 6]
 ];
-
-checkwinner(() =>{
+const disableingbt=()=>{
+  for(btn of boxs){
+    btn.disabled = true ;
+  }
+}
+const checkwinner=() => {
     for(each of winningPatterns){
-        
+        let pos1 = boxs[each[0]].innerText;
+        let pos2 = boxs[each[1]].innerText;
+        let pos3 = boxs[each[2]].innerText;
+        if(pos1 !="" && pos2 != "" && pos3 !="" ){
+      if(pos1 === pos2 && pos2=== pos3){
+       if(pos1 ==="X"){
+        winnertext.innerText = "X winnes!!";
+       disableingbt();
+       }
+       else{
+         winnertext.innerText ="O winner!!";
+       disableingbt();
+       }
+      }
     }
-})
+    }
+   
+};
 boxs.forEach((box)=>{
     box.addEventListener("click" , ()=>{
      if(turnofx===true){
@@ -29,6 +49,7 @@ boxs.forEach((box)=>{
         turnofx = true ;
      }
       box.disabled = true;
+       checkwinner();
     })
-    checkwinner()
 })
+playagainbtn.addEventListener("click" , )
