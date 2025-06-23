@@ -2,6 +2,13 @@ let boxs = document.querySelectorAll(".box");
 let playagainbtn = document.querySelector("#playagain");
 let winnertext = document.querySelector("#winner")
 let turnofx= true;
+playagainbtn.addEventListener("click" , () =>{
+  winnertext.innerText = " LET THE GAME BEGIN!!";
+  boxs.forEach((box)=>{
+    box.innerText = "";
+    box.disabled = false;
+  })
+})
 
 const winningPatterns = [
   [0, 1, 2], // rows
@@ -52,4 +59,4 @@ boxs.forEach((box)=>{
        checkwinner();
     })
 })
-playagainbtn.addEventListener("click" , )
+
